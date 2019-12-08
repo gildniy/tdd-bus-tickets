@@ -17,6 +17,7 @@ describe('Tickets', () => {
   it('should add a new ticket', () =>
     request(Server)
     .post('/api/v1/tickets')
+    .type('form') // https://stackoverflow.com/a/44666398/1992866
     .send({name: 'ticket_no_3'})
     .expect('Content-Type', /json/)
     .then(r => {
