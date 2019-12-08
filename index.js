@@ -1,8 +1,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
-const port = 4000;
+const port = 8000;
 
-app.listen(port, () => {
-  console.log('We are here on: ' + port);
-});
+app.use(bodyParser.urlencoded({extended: true}));
+
+module.exports = app.listen(port);
